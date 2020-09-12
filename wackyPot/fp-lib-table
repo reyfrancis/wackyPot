@@ -1,0 +1,8 @@
+(fp_lib_table
+  (lib (name BatteryHolder)(type KiCad)(uri "${KIPRJMOD}/Local Footprints/BatteryHolder.pretty")(options "")(descr ""))
+  (lib (name Connectors_JST)(type KiCad)(uri "${KIPRJMOD}/Local Footprints/Connectors_JST.pretty")(options "")(descr ""))
+  (lib (name LD39050)(type KiCad)(uri "${KIPRJMOD}/Local Footprints/LD39050.pretty")(options "")(descr ""))
+  (lib (name XL6009)(type KiCad)(uri "${KIPRJMOD}/Local Footprints/XL6009.pretty")(options "")(descr ""))
+  (lib (name wackyPot)(type KiCad)(uri D:/Projects/wackyPot)(options "")(descr ""))
+  (lib (name TactileSwitch)(type KiCad)(uri "${KIPRJMOD}/Local Footprints/TactileSwitch.pretty")(options "")(descr ""))
+)

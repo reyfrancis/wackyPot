@@ -1,0 +1,167 @@
+jupyter notebook --notebook-dir=D:
+https://stackoverflow.com/questions/49647705/jupyter-nbextensions-does-not-appear/50663099
+
+
+BMS Explanation: https://www.youtube.com/watch?v=OG-UUXEOZ8E
+USB Charge Full Review: https://www.youtube.com/watch?v=LkhGDeYlv8s
+LED Control: https://www.youtube.com/watch?v=DkJ1f5UIuak
+
+Kralyn Battery: https://www.youtube.com/watch?v=0jRsltIW8qM
+
+diaphragm pump: https://www.aliexpress.com/item/32946121905.html?spm=a2g0o.productlist.0.0.4cfb5714gXMJpv&algo_pvid=d7dec223-0789-4fe5-93f7-b6fde21875db&algo_expid=d7dec223-0789-4fe5-93f7-b6fde21875db-20&btsid=0be3743615928381518202025eee6b&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+
+
+https://www.aliexpress.com/item/32946121905.html?spm=a2g0o.productlist.0.0.4cfb5714gXMJpv&algo_pvid=d7dec223-0789-4fe5-93f7-b6fde21875db&algo_expid=d7dec223-0789-4fe5-93f7-b6fde21875db-20&btsid=0be3743615928381518202025eee6b&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+
+https://www.aliexpress.com/item/4000086165151.html?spm=a2g0o.detail.1000014.2.15054da3aHMdh4&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.13338.170725.0&scm_id=1007.13338.170725.0&scm-url=1007.13338.170725.0&pvid=7898f54b-222f-435e-bc68-9809d589053f&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.13338.170725.0,pvid:7898f54b-222f-435e-bc68-9809d589053f,tpp_buckets:668%230%23131923%2318_668%23808%235965%23460_668%23888%233325%2314_3338%230%23170725%230_3338%233142%239890%236_668%232846%238112%23595_668%232717%237562%23494_668%233164%239976%23863
+
+http://smisioto.no-ip.org/elettronica/kicad/kicad-en.htm
+
+SOT-23-6 handsoldering - fs312f-g
+
+https://www.best-microcontroller-projects.com/tp4056.html
+
+capacitive charge MOSFET explained - https://www.youtube.com/watch?v=SCONceTwuuc
+
+P-channel mosfet acts like a normally close relay. If the gate is attached to the ground, then the current will flow from the drain (+) to the source (-). If voltage is applied to the gate, then the current will not flow (open the relay).
+
+
+https://electronics.stackexchange.com/questions/353097/how-can-i-use-two-tp4056-with-two-li-ion-batteries-but-single-load/353115#:~:text=2%20Answers&text=Don't.,current%20from%20one%20to%20another).
+
+https://www.youtube.com/watch?v=GRd9uTwg7r4
+
+https://www.youtube.com/watch?v=dbiNLP9Tf-I 
+
+1s2p config
+
+https://www.analog.com/en/technical-articles/it-just-got-easier-to-convert-lithium-ion-battery-voltage-to-33v.html
+
+https://www.youtube.com/watch?v=G0Gn3oQTLaI
+
+https://www.youtube.com/watch?v=M9lZ5Qy5S2s
+
+
+https://www.bernebeer.nl/arduino-programmable-3-1a-powerbank-2-bc1-2-ports-4-rgb-leds/
+
+https://github.com/Andy4495/BQ27441_SWI2C
+
+https://github.com/sparkfun/SparkFun_BQ27441_Arduino_Library
+
+https://e2e.ti.com/support/power-management/f/196/t/723437?BQ25895-Power-bank-with-2-parallel-connected-Li-poly-batteries
+
+https://www.bernebeer.nl/new-bq25895-breakout/
+
+TI support:
+
+https://e2e.ti.com/support/power-management/f/196/p/577322/2128790#jktype=e2e&pi320995filter=all&pi320995scroll=false
+
+r385 datasheet:
+
+https://www.cytron.io/p-r385-dc12v-diaphragm-water-pump
+
+transistor control:
+
+https://itp.nyu.edu/physcomp/labs/motors-and-transistors/using-a-transistor-to-control-a-high-current-load/
+
+https://www.instructables.com/id/12V-Motor-Control-With-5V-Arduino-and-NPN-Transist/
+
+https://raspberrypi.stackexchange.com/questions/59617/how-to-control-12v-dc-motor-with-a-npn-transistor-a-gpio-pin-and-a-12-v-dc-powe
+
+SPOTWELD
+
+https://www.youtube.com/watch?v=o1NFbchHeM8
+
+https://shopee.ph/1-PC-DLG-3200mAh-18650-Battery-6.4A-3.7V-Grade-A-Lithium-ion-2C-Actual-capacity-3100-to-3150mAh-i.16612090.7241244786
+
+XT 30
+
+https://github.com/dimtass/stm32f103-ili9341-dma
+
+https://www.stupid-projects.com/driving-an-ili9341-lcd-with-an-overclocked-stm32f103/
+
+https://stm32-base.org/boards/STM32F411CEU6-WeAct-Black-Pill-V2.0
+
+https://github.com/elmouden007/STM32TFT
+
+DMA explained:
+
+https://www.youtube.com/watch?v=Ikgj-vkgLyc
+https://github.com/Spirit532/ILI9163C_STM32_HAL_DMA
+
+BLUE PILL : ARM CORTEX M3 =  STM32 F103C8T6 - 72 MHz
+BLACK PILL: ARM CORTEX M4F = STM32 F32F401 @ 84 MHz
+							 STM32 F411 @ 100 MHz
+
+https://www.youtube.com/watch?v=4HOeila3rws
+
+https://www.youtube.com/watch?v=iuPJtNPQ9iA&feature=youtu.be
+
+
+DL
+
+https://www.youtube.com/watch?v=EX7g3_NUDgk&list=PLmY3zqJJdVeNIZ8z_yw7Db9ej3FVG0iLy
+https://www.youtube.com/watch?v=sQCqVBuq-gA&list=PLnMKNibPkDnGtuIl5v0CvC81Am7SKpj02
+https://www.youtube.com/watch?v=iImNVKJCq4Q&list=PLfIJKC1ud8gga7xeUUJ-bRUbeChfTOOBd
+https://www.youtube.com/watch?v=FAv0LO5E2TM&list=PLfExI9i0v1sn-GXGKpH1Rgjta04-30Z6u
+https://www.youtube.com/watch?v=uJvPwxa5n00&list=PLfExI9i0v1sn_lQjCFJHrDSpvZ8F2CpkA
+
+
+https://www.youtube.com/watch?v=isOekyygpR8
+https://www.youtube.com/watch?v=hyZS2p1tW-g
+https://www.youtube.com/watch?v=OPrcpbKNSjU
+https://www.youtube.com/watch?v=VfbW6nfG4kw
+https://www.youtube.com/watch?v=eFKeNPJq50g
+
+Homemade HCSR04
+https://www.youtube.com/watch?v=e_cyxoqvWe8
+
+HOLY GRAIL
+
+http://pic18fxx.blogspot.com/2014/12/library-for-240x320-graphical-display.html
+https://www.aliexpress.com/item/32977663446.html?fbclid=IwAR2LCaoZhELQzr0Hy_i9dSWr6h7Cxet6A9pIff5DrxiMLe7IHMVFO83dxD8
+
+STEMWIN library
+STM32F407VET6
+
+Holy doc
+https://www.thebackshed.com/forum/ViewTopic.php?TID=11334
+
+Holy stm32cubeide
+https://www.youtube.com/watch?v=1wcDlJDHuXM
+https://ralimtek.com/stm32_debugging/
+
+https://os.mbed.com/users/hudakz/code/STM32F407VET6_Hello/shortlog/
+
+
+MYaqoobEmbedded
+
+httpswww.youtube.comwatchv=FAv0LO5E2TM&list=PLfExI9i0v1sn-GXGKpH1Rgjta04-30Z6u
+
+
+TUBING:
+https://www.aliexpress.com/item/32872071063.html?spm=a2g0o.productlist.0.0.c72368d8llj4bp&algo_pvid=bf3c1fc4-7ca2-4b84-b300-d111b6ed4afd&algo_expid=bf3c1fc4-7ca2-4b84-b300-d111b6ed4afd-5&btsid=0bb0620315993982578255439e2531&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+
+Y-Tubing:
+https://www.aliexpress.com/item/1005001344948764.html?spm=a2g0o.productlist.0.0.c72368d8llj4bp&algo_pvid=bf3c1fc4-7ca2-4b84-b300-d111b6ed4afd&algo_expid=bf3c1fc4-7ca2-4b84-b300-d111b6ed4afd-0&btsid=0bb0620315993982578255439e2531&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+
+http://zerocharactersleft.blogspot.com/2011/11/pcb-as-capacitive-soil-moisture-sensor.html
+
+
+https://mikrocontroller.bplaced.net/wordpress/?page_id=472
+https://stm32f4-discovery.net/2014/04/library-08-ili9341-lcd-on-stm32f429-discovery-board/
+
+LCD
+https://shopee.ph/Soxii-2.8in-240*320-LCD-Display-Module-SPI-TFT-Color-ILI9341-Panel-Serial-PortModule-A-i.284698724.3950415373
+
+
+Flat cable connector
+https://sudomod.com/forum/viewtopic.php?t=5614
+
+
+https://maker.pro/arduino/projects/how-to-use-arduino-vl53l0x-to-build-a-liquid-level-sensing-device
+
+MOTOR Suppression
+https://www.youtube.com/watch?v=O39inZIscOI
+http://www.kerrywong.com/2012/01/26/a-short-guide-on-motor-electrical-noise-reduction/
+https://www.pololu.com/docs/0J15/9
+https://forum.arduino.cc/index.php?topic=387257.0

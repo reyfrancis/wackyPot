@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name crumpschemes)(type Legacy)(uri D:/Projects/CrumpSchemes-master/crumpschemes.lib)(options "")(descr ""))
+  (lib (name button_no_01x02)(type Legacy)(uri D:/Projects/button_no_01x02.lib)(options "")(descr ""))
+  (lib (name xl6009)(type Legacy)(uri D:/Projects/power_controller-master/xl6009.lib)(options "")(descr ""))
+)

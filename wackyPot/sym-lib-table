@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name button_no_01x02)(type Legacy)(uri "${KIPRJMOD}/Local Symbols/button_no_01x02.lib")(options "")(descr ""))
+  (lib (name MAX17043)(type Legacy)(uri "${KIPRJMOD}/Local Symbols/MAX17043.lib")(options "")(descr ""))
+  (lib (name XL6009)(type Legacy)(uri "${KIPRJMOD}/Local Symbols/XL6009.lib")(options "")(descr ""))
+  (lib (name LD39050)(type Legacy)(uri "${KIPRJMOD}/Local Symbols/LD39050.lib")(options "")(descr ""))
+  (lib (name TS-1187A-B-A-B)(type Legacy)(uri "${KIPRJMOD}/Local Symbols/TS-1187A-B-A-B.lib")(options "")(descr ""))
+)
