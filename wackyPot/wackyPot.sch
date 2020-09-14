@@ -604,7 +604,7 @@ Wire Notes Line
 Wire Wire Line
 	3350 1400 3900 1400
 Text Notes 2700 5050 0    39   ~ 0
-Connect SCL to the logic rail through a 10-kΩ resistor\nConnect SDA to the logic rail through a 10-kΩ resistor\n\nNote: SDA and SCL line is pulled in the ATmega328. 
+Connect SCL to the logic rail through a 10-kΩ resistor\nConnect SDA to the logic rail through a 10-kΩ resistor\n\nNote: SDA and SCL line is pulled in the STM32. 
 Wire Notes Line
 	4700 3450 4100 3450
 $Comp
