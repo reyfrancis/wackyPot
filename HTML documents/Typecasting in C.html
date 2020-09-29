@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://zhu45.org/posts/2017/Jan/19/typecasting-in-c/ -->
+<html class="no-js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>    Typecasting in C
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="This is the homepage of Zeyuan Hu" name="description">
+        <meta content="Zeyuan Hu, Zeyuan, zeyuan hu, zeyuan ibm, IBM, Zeyuan IBM, UW Madison, University of Wisconsin Madison, zeyuan wisc, zeyuan IBM, zeyuan federation" name="keywords">
+        <meta content="Zeyuan Hu" name="author">
+        <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style><link href="./Typecasting in C_files/css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./Typecasting in C_files/cid.css">
+        <!-- add font-awesome -->
+        <script src="./Typecasting in C_files/ga.js.download"></script><script defer="" src="./Typecasting in C_files/all.js.download"></script>
+        <link rel="stylesheet" href="./Typecasting in C_files/academicons.css">
+        <link href="https://zhu45.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zeyuan Hu&#39;s page Atom Feed">
+        <link href="https://zhu45.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Zeyuan Hu&#39;s page RSS Feed">
+        <link href="https://zhu45.org/theme/images/favicon.ico" rel="icon">
+    <script type="text/javascript" async="" src="./Typecasting in C_files/embed.js.download"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.6525595c7a9874fa10bd041275e40f17.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.e07f4f02bedd02259fb3f3e092970560.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.fce6c302b518ce1fcbc2efc174b77740.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./Typecasting in C_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js.download" async="" charset="UTF-8"></script></head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+            <div class="container">
+<header class="blog-header">
+        <h1 id="site-title"><a href="https://zhu45.org/" style="color: black; text-decoration: none">Zeyuan Hu's page</a></h1>
+    <p></p>
+    <nav>
+            <a href="https://zhu45.org/about-me.html" style="padding: 10px">ABOUT</a>
+            <a href="https://zhu45.org/archives/index.html" style="padding: 10px">ARCHIVES</a>
+            <a href="https://zhu45.org/publications.html" style="padding: 10px">PUBLICATIONS</a>
+    </nav>
+</header>
+    <div class="post">
+      <header>
+            <h1 class="post-title">Typecasting in C</h1>
+            <div class="panel">
+                <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <time datetime="2017-01-19T00:53:00+08:00"> Jan 19, 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://zhu45.org/tag/c.html">c</a>
+        /
+	<a href="https://zhu45.org/tag/pointer.html">pointer</a>
+    
+</footer><!-- /.post-info -->                </div>
+            </div>
+          <!-- <div class="post-title">Typecasting in C</h1></div> -->
+          <!-- <div class="post-date"><time datetime="2017-01-19T00:53:00+08:00">Jan 19, 2017</time></div> -->
+        </header>
+        
+        <article>
+            <p>This post covers the typecasting in C with the aim to get a clear understanding
+of the most commonly-seen C manipulation. This writeup is adapted from
+"Hacking - the Art of Exploitation".</p>
+<div class="section" id="tl-dr">
+<h2>TL;DR</h2>
+<ul class="simple">
+<li>Typecasting change a variable into a different type just for that operation.</li>
+<li>Pointer type determines the size of the data it points to. In other words, when you
+do pointer arithemetic (i.e <tt class="docutils literal">+</tt>), the number of bytes change (i.e increase) in terms of memory
+address is determined by the pointer type.</li>
+<li><tt class="docutils literal">void</tt> pointer is a generic pointer and we need to cast them to the proper data type in order to
+de-reference it.</li>
+<li>Pointer is merely a memory address. With typecasting, any type with enough size to hold
+the memory address can work like a pointer.</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>Details</h2>
+<p>Typecasting is simply a way to temporarily change a variable's data type,
+despite how it was originally define. When a variable is typecast into a different type,
+the compiler is basically told to treat that variable as if it were the new data type,
+but <em>only for that operation</em>.</p>
+<p>Typecasting is mostly used with pointers. Before we jump into typecasting, let's take a look
+why we need to define type for pointer (pointer is just a memory address). One reason for this
+is to try to limit programming errors. An integer pointer should only point to integer data, while
+a character pointer should only point to character data. Another reason is for pointer arithmetic.
+An integer is four bytes in size, while a character only takes up a single byte.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+  <span class="kt">char</span> <span class="n">char_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+  <span class="kt">int</span> <span class="n">int_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+  <span class="kt">char</span> <span class="o">*</span><span class="n">char_pointer</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="o">*</span><span class="n">int_pointer</span><span class="p">;</span>
+
+  <span class="n">char_pointer</span> <span class="o">=</span> <span class="n">char_array</span><span class="p">;</span>
+  <span class="n">int_pointer</span> <span class="o">=</span> <span class="n">int_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[integer pointer] points to %p, which contains the integer %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">int_pointer</span><span class="p">,</span> <span class="o">*</span><span class="n">int_pointer</span><span class="o">++</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[char pointer] points to %p, which contains the char '%c'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">char_pointer</span><span class="p">,</span> <span class="o">*</span><span class="n">char_pointer</span><span class="o">++</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The program itself is pretty straightforward. Here is the output:</p>
+<pre class="literal-block">[integer pointer] points to 0x7ffd90db45a4, which contains the integer 1
+[integer pointer] points to 0x7ffd90db45a8, which contains the integer 2
+[integer pointer] points to 0x7ffd90db45ac, which contains the integer 3
+[integer pointer] points to 0x7ffd90db45b0, which contains the integer 4
+[integer pointer] points to 0x7ffd90db45b4, which contains the integer 5
+[char pointer] points to 0x7ffd90db45c1, which contains the char 'a'
+[char pointer] points to 0x7ffd90db45c2, which contains the char 'b'
+[char pointer] points to 0x7ffd90db45c3, which contains the char 'c'
+[char pointer] points to 0x7ffd90db45c4, which contains the char 'd'
+[char pointer] points to 0x7ffd90db45c5, which contains the char 'e'
+</pre>
+<p>Even though the same value of 1 is added to <tt class="docutils literal">int_pointer</tt> and <tt class="docutils literal">char_pointer</tt>
+in their respective loops, the compiler increments the pointer's addresses by different
+amounts. Since a char is only 1 byte, the pointer to the next char would naturally also be 1 byte over.
+But since an integer is 4 bytes, a pointer to the next integer has to be 4 bytes over.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+  <span class="kt">char</span> <span class="n">char_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+  <span class="kt">int</span> <span class="n">int_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+  <span class="kt">char</span> <span class="o">*</span><span class="n">char_pointer</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="o">*</span><span class="n">int_pointer</span><span class="p">;</span>
+
+  <span class="c1">// The char_pointer and int_pointer now point to incompatible data types.</span>
+  <span class="n">char_pointer</span> <span class="o">=</span> <span class="n">int_array</span><span class="p">;</span>
+  <span class="n">int_pointer</span> <span class="o">=</span> <span class="n">char_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[integer pointer] points to %p, which contains the integer %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">int_pointer</span><span class="p">,</span> <span class="o">*</span><span class="n">int_pointer</span><span class="o">++</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[char pointer] points to %p, which contains the char '%d'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">char_pointer</span><span class="p">,</span> <span class="o">*</span><span class="n">char_pointer</span><span class="o">++</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The output is:</p>
+<pre class="literal-block">$ gcc pointer_types2.c
+pointer_types2.c: In function ‘main’:
+pointer_types2.c:13: warning: assignment from incompatible pointer type
+pointer_types2.c:14: warning: assignment from incompatible pointer type
+</pre>
+<p>Here, the compiler and the programmer are the only ones that care about a pointer's type.
+In the compiled code, a pointer is nothing more than a memory address, so the compiler
+will still compile the code if a pointer points to an incompatible data type - it simply warns us
+to anticipate unexpected results.:</p>
+<pre class="literal-block">[integer pointer] points to 0x7ffe2d481324, which contains the integer a
+[integer pointer] points to 0x7ffe2d481328, which contains the integer e
+[integer pointer] points to 0x7ffe2d48132c, which contains the integer ▒
+[integer pointer] points to 0x7ffe2d481330, which contains the integer
+[integer pointer] points to 0x7ffe2d481334, which contains the integer
+[char pointer] points to 0x7ffe2d481301, which contains the char '1'
+[char pointer] points to 0x7ffe2d481302, which contains the char '0'
+[char pointer] points to 0x7ffe2d481303, which contains the char '0'
+[char pointer] points to 0x7ffe2d481304, which contains the char '0'
+[char pointer] points to 0x7ffe2d481305, which contains the char '2'
+</pre>
+<p>Even though <tt class="docutils literal">int_pointer</tt> points to character data that only contains 5 bytes of data, it is still
+typed as an integer. This means that adding 1 to the pointer will increment the address by 4 each time.
+Similarly, the <tt class="docutils literal">char_pointer</tt>'s address is only incremented by 1 each time, stepping through the 20 bytes
+of integer data, one byte at a time. So, we need to make sure that pointer type is correct. This is the place where
+we need typecasting.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+  <span class="kt">char</span> <span class="n">char_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+  <span class="kt">int</span> <span class="n">int_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+  <span class="kt">char</span> <span class="o">*</span><span class="n">char_pointer</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="o">*</span><span class="n">int_pointer</span><span class="p">;</span>
+
+  <span class="n">char_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">int_array</span><span class="p">;</span>
+  <span class="n">int_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">char_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[integer  pointer] points to %p, which contains the integer %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">int_pointer</span><span class="p">,</span> <span class="o">*</span><span class="n">int_pointer</span><span class="p">);</span>
+    <span class="n">int_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">int_pointer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[char pointer] points to %p, which contains the char '%d'</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">char_pointer</span><span class="p">,</span> <span class="o">*</span><span class="n">char_pointer</span><span class="p">);</span>
+    <span class="n">char_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">char_pointer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Typecasting is just a way to change the type of a variable on the fly. In the above code, when the pointers
+are initially set, the data is typecast into the pointer's data type. This will prevent the C compiler from complaining
+about the conflicting data types; however, any pointer arithmetic will still be incorrect (because typecasting is just
+for that one operation). To fix that, when 1 is added to the pointers, they must first be typecast into the correct data type
+so the address is incremented by the correct amount. Then this pointer needs to be typecast back into the pointer's data type
+once again. It works but in a not beautiful way.:</p>
+<pre class="literal-block">[integer pointer] points to 0x7ffd484ac470, which contains the integer a
+[integer pointer] points to 0x7ffd484ac471, which contains the integer b
+[integer pointer] points to 0x7ffd484ac472, which contains the integer c
+[integer pointer] points to 0x7ffd484ac473, which contains the integer d
+[integer pointer] points to 0x7ffd484ac474, which contains the integer e
+[char pointer] points to 0x7ffd484ac450, which contains the char '1'
+[char pointer] points to 0x7ffd484ac454, which contains the char '2'
+[char pointer] points to 0x7ffd484ac458, which contains the char '3'
+[char pointer] points to 0x7ffd484ac45c, which contains the char '4'
+[char pointer] points to 0x7ffd484ac460, which contains the char '5'
+</pre>
+<p>Sometimes, we probably want to use a generic, typeless pointer. In C, a void pointer is a typeless pointer, defined by the <tt class="docutils literal">void</tt> keyword.
+Here are two things we need to note:</p>
+<blockquote>
+<ul class="simple">
+<li>pointers cannot be de-referenced unless they have a type. In order to retrieve the value stored in the pointer's memory address, the
+compiler must first know what type of data it is.</li>
+<li>void pointers must also be typecast before doing pointer arithmetic, which indicates that a void pointer's main purpose is to simply hold a
+memory address.</li>
+</ul>
+</blockquote>
+<p>Let's rewrite our program.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+  <span class="kt">char</span> <span class="n">char_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+  <span class="kt">int</span> <span class="n">int_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+  <span class="kt">void</span> <span class="o">*</span><span class="n">void_pointer</span><span class="p">;</span>
+
+  <span class="n">void_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">char_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[char pointer] points to %p, which contains the char %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">void_pointer</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">void_pointer</span><span class="p">));</span>
+    <span class="n">void_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">void_pointer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">void_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">int_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[integer pointer] points to %p, which contains the integer %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">void_pointer</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">void_pointer</span><span class="p">));</span>
+    <span class="n">void_pointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">void_pointer</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>The output is:</p>
+<pre class="literal-block">[char pointer] points to 0x7fff06cf8de0, which contains the char a
+[char pointer] points to 0x7fff06cf8de1, which contains the char b
+[char pointer] points to 0x7fff06cf8de2, which contains the char c
+[char pointer] points to 0x7fff06cf8de3, which contains the char d
+[char pointer] points to 0x7fff06cf8de4, which contains the char e
+[integer pointer] points to 0x7fff06cf8dc0, which contains the integer 1
+[integer pointer] points to 0x7fff06cf8dc4, which contains the integer 2
+[integer pointer] points to 0x7fff06cf8dc8, which contains the integer 3
+[integer pointer] points to 0x7fff06cf8dcc, which contains the integer 4
+[integer pointer] points to 0x7fff06cf8dd0, which contains the integer 5
+</pre>
+<p>The void pointer is really just holding the memory addresses, while the hard-coded typecasting
+is telling the compiler to use the proper types whenever the pointer is used. Since the type is
+taken care of by the typecasts, the void pointer is truly nothin more than a memory address.
+With the data types defined by typecasting, anything that is big enough to hold a four-byte or eight-byte value can
+work the same way as a void pointer.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+  <span class="kt">char</span> <span class="n">char_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="p">};</span>
+  <span class="kt">int</span> <span class="n">int_array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">hacky_nonpointer</span><span class="p">;</span>
+
+  <span class="n">hacky_nonpointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">int</span><span class="p">)</span><span class="n">char_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[hacky_nonpointer] points to %p, which contains the char %c</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">hacky_nonpointer</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">hacky_nonpointer</span><span class="p">));</span>
+    <span class="n">hacky_nonpointer</span> <span class="o">=</span> <span class="n">hacky_nonpointer</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">hacky_nonpointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">int</span><span class="p">)</span><span class="n">int_array</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"[hacky_nonpointer] points to %p, which contains the integer %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">hacky_nonpointer</span><span class="p">,</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="n">hacky_nonpointer</span><span class="p">));</span>
+    <span class="n">hacky_nonpointer</span> <span class="o">=</span> <span class="n">hacky_nonpointer</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>Note that I use <tt class="docutils literal">unsigned long int</tt> because I'm on a 64-bit system. <tt class="docutils literal">unsigned int</tt> is enough for 32-bit system.:</p>
+<pre class="literal-block">[hacky_nonpointer] points to 0x7fff3e378360, which contains the char a
+[hacky_nonpointer] points to 0x7fff3e378361, which contains the char b
+[hacky_nonpointer] points to 0x7fff3e378362, which contains the char c
+[hacky_nonpointer] points to 0x7fff3e378363, which contains the char d
+[hacky_nonpointer] points to 0x7fff3e378364, which contains the char e
+[hacky_nonpointer] points to 0x7fff3e378340, which contains the integer 1
+[hacky_nonpointer] points to 0x7fff3e378344, which contains the integer 2
+[hacky_nonpointer] points to 0x7fff3e378348, which contains the integer 3
+[hacky_nonpointer] points to 0x7fff3e37834c, which contains the integer 4
+[hacky_nonpointer] points to 0x7fff3e378350, which contains the integer 5
+</pre>
+<p>The important thing to remember about variables in C is that the compiler is the
+only thing that care about a variable's type. In the end, after the program has been compiled,
+the variables are nothing more than memory addresses. This means that variables of one type can easily be coerced into
+behaving like another type by telling the compiler to typecast them into the desired type.</p>
+</div>
+
+        </article>
+
+        <footer>
+          <!-- <p>This entry is posted in <a href="../../../../../category/programming-languages.html">programming languages</a>.</p> -->
+          <!-- <a href="../../../../../donate.html" class="button">Donate</a> -->
+          <a href="https://paypal.me/zhu45?locale.x=en_US">paypal.me</a>
+        </footer>
+        
+<div class="comments">
+    <div id="disqus_thread"><iframe id="dsq-app890" name="dsq-app890" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Typecasting in C_files/saved_resource.html" horizontalscrolling="no" verticalscrolling="no" style="height: 667px !important;"></iframe></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'zhu45-org';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+</div>
+
+    </div>
+
+
+<script>
+   function topFunction() {
+       document.body.scrollTop = 0;
+       document.documentElement.scrollTop = 0;
+   }
+</script>
+
+<footer class="blog-footer">
+    <div id="copyright">
+      Copyright (c) 2015-2020 <a href="https://zhu45.org/about-me.html">Zeyuan Hu</a>
+    </div>
+    <div id="archive">
+      <a href="javascript:topFunction();">Back to top</a>
+    </div>
+</footer>
+            </div>
+<script>
+    var _gaq=[['_setAccount','UA-37565522-2'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+    
+<iframe style="display: none;" src="./Typecasting in C_files/saved_resource(1).html"></iframe><div id="weava-permanent-marker" date="1601030284541"></div></body></html>
