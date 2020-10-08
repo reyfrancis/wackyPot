@@ -1,19 +1,12 @@
-/*
- * ILI9341 LCD driver v2020.05.27
- * 2019.11. Add RGB mode with memory frame buffer (in sram or sdram)
- * 2020.02. Add analog touchscreen (only 8bit paralell mode)
- * 2020.05  Add Scroll function
-*/
-
 #include <string.h>
 #include "main.h"
 #include "lcd.h"
 #include "bmp.h"
 #include "ili9341.h"
 
-//#if  ILI9341_TOUCH == 1
-//#include "ts.h"
-//#endif
+#if  ILI9341_TOUCH == 1
+#include "ts.h"
+#endif
 
 void     ili9341_Init(void);
 uint16_t ili9341_ReadID(void);
@@ -595,7 +588,7 @@ void ili9341_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *pbmp)
   LCD_IO_WriteCmd8(ILI9341_MADCTL); LCD_IO_WriteData8(ILI9341_MAD_DATA_RIGHT_THEN_UP);
   LCD_IO_WriteCmd8(ILI9341_PASET); LCD_IO_WriteData16_to_2x8(ILI9341_SIZE_Y - 1 - yEnd); LCD_IO_WriteData16_to_2x8(ILI9341_SIZE_Y - 1 - yStart);
   LCD_IO_WriteCmd8MultipleData16(ILI9341_RAMWR, (uint16_t *)pbmp, size);
-  LCD_IO_WriteCmd8(ILI9341_MADCTL); LCD_IO_WriteData8(ILI9341_MAD_DATA_RIGHT_THEN_DOWN);
+  LCD_IO_WriteCmd8(ILI9341_MADCTL); LCD_IO_WriteData8(ILI9341_MAD_DATA_RIGHT_THEN_DOWN); 
   ILI9341_LCDMUTEX_POP();
 }
 

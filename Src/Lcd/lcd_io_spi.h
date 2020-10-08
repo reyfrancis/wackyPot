@@ -1,10 +1,3 @@
-/*
- * SPI LCD driver STM32F4
- * author: Roberto Benjami
- * v.2020.05
- */
-
-//=============================================================================
 /* SPI select (0, 1, 2, 3, 4, 5, 6)
    - 0: software SPI driver (the pins assign are full free)
    - 1..6: hardware SPI driver (the LCD_SCK, LCD_MOSI, LCD_MISO pins are lock to hardware) */
@@ -14,7 +7,7 @@
    - 0: only TX (only to write on the display, LCD_MISO is not used)
    - 1: half duplex (LCD_MOSI is bidirectional pin, LCD_MISO is not used)
    - 2: full duplex (SPI TX: LCD_MOSI, SPI RX: LCD_MISO) */
-#define LCD_SPI_MODE      1
+#define LCD_SPI_MODE      0
 
 /* SPI write and read speed
    - software SPI: 0=none delay, 1=nop, 2=CLK pin double write, 3.. = LCD_IO_Delay(LCD_SPI_SPD - 3)
@@ -54,7 +47,7 @@
 #define LCD_DMA_RX        1, 0, 3, 0
 
 /* DMA interrupt priority (see NVIC_SetPriority function, default value: 15) */
-#define LCD_DMA_IRQ_PR    3
+#define LCD_DMA_IRQ_PR    5
 
 /* In dma mode the bitmap drawing function is completed before the actual drawing.
  * If the content of the image changes (because it is in a stack), the drawing will be corrupted.
