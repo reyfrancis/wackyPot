@@ -95,7 +95,7 @@ typedef enum
 /** 
   * @brief LCD default font 
   */ 
-#define LCD_DEFAULT_FONT         Font8
+#define LCD_DEFAULT_FONT FontCalibri23
 
 /**
   * @}

@@ -1,10 +1,3 @@
-#ifndef LCD_CORE_H
-#define LCD_CORE_H
-
-#ifdef __cplusplus
- extern "C" {
-#endif
-
 /* Includes */
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,6 +6,10 @@
 #include "lcd.h"
 #include "bmp.h"
 #include "stm32_adafruit_lcd.h" /* BSP_LCD Function Definitions */
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 /* Images Macros */
 #define gui_bat_0     GUI_BAT_0
@@ -38,15 +35,6 @@
 
 #define alrm_alrm_1   ALRM_ALRM_1
 #define alrm_alrm_0   ALRM_ALRM_0
-#define alrm_box_0    ALRM_BOX_0
-#define alrm_box_1    ALRM_BOX_1
-#define alrm_ellip_0  ALRM_ELLIP_0
-#define alrm_ellip_1  ALRM_ELLIP_1
-
-#define clndr_clndr_0 CLNDR_CLNDR_0
-#define clndr_clndr_1 CLNDR_CLNDR_1
-// #define date_0        DATE_0  @Wrong COLOR!
-#define date_1        DATE_1
 
 #define bat_sens      BAT_SENS
 #define moist_sens    MOIST_SENS
@@ -55,43 +43,76 @@
 #define mid_clock_0   MID_CLOCK_0
 #define mid_clock_1   MID_CLOCK_1
 #define mid_hand_0    MID_HAND_0
-#define mid_hand_1    MID_HAND_1 /* Images Macros */
-
-#define bat_off_0_c BAT_OFF_0_C
-#define bat_off_1_c BAT_OFF_1_C
-#define bat_on_0_c  BAT_ON_0_C
-#define bat_on_1_c  BAT_ON_1_C
-
-#define set_0_c     SET_0_C
-#define set_1_c     SET_1_C
-#define slp_off_0_c SLP_OFF_0_C
-#define slp_off_1_c SLP_OFF_1_C
-#define slp_on_0_c  SLP_ON_0_C
-#define slp_on_1_c  SLP_ON_1_C
+#define mid_hand_1    MID_HAND_1 
 
 /* LCD    Dimensions in Pixels */
 #define WIDTH  320
 #define HEIGHT 240
 
 /* LCD Initialization Macros */
-#define BAT_TLBR           {84,      167,      236, 230}    /* Coodinates of top left and top right battery box */
-#define GUI_CTRPT          {WIDTH/2, HEIGHT/2}
-#define BOX_DIM            {152,     63}
 
+/* Default GUI */
+#define BAT_TLBR           {84,          167,      236,     230}    /* Coodinates of top left and top right battery box */
+#define GUI_CTRPT          {WIDTH/2,     HEIGHT/2}
+#define BOX_DIM            {152,         63}       /* Default GUI */
+#define BAT_SENS_BR        266,          25
+#define MOIST_SENS_BR      12,           232
+#define WAT_SENS_BR        272,          234
+#define MID_BTN_BR         {118,         161}
+
+/* ONOF values */
+#define OFF 			   0
+#define ON 				   1
+
+/* CLICK values */
+#define CLICK 			   1
+
+/* Battery Menu */
+#define BAT_STR_X          (uint16_t)226
+#define BAT_STR_Y          (uint16_t)144 /* Battery Menu */
+
+/* Alarm Menu */
 #define ALRM_ELLIPSE_DIM_X 28
 #define ALRM_ELLIPSE_DIM_Y 20
 #define ALRM_BOX_DIM_X     42
-#define ALRM_BOX_DIM_Y     46
+#define ALRM_BOX_DIM_Y     46 /* Alarm Menu */
 
-#define MID_BTN_BR         {201,     161}
+/* Sleep Menu */
+#define SLP_STR_X          (uint16_t)145
+#define SLP_STR_Y          (uint16_t)213
 
-#define BAT_SENS_BR        301,     25
-#define MOIST_SENS_BR      44,     232
-#define WAT_SENS_BR        311,     234
+#define SLP_SET_STR_X      (uint16_t)135
+#define SLP_SET_STR_Y      (uint16_t)43 /* Sleep Menu */
+
+#define linearMinutesMAX	260
+#define linearMinutesMIN    80
+
+/* Calendar Menu */
+#define CLNDR_MAIN_X       (uint16_t)244
+#define CLNDR_MAIN_Y       (uint16_t)214
+#define CLNDR_MAIN_WIDTH   (uint16_t)169
+#define CLNDR_MAIN_HEIGHT  (uint16_t)164
+
+#define SUNDAY_X           (uint16_t)95
+#define SUNDAY_Y           (uint16_t)67
+#define SUNDAY_OFFSET      (uint16_t)24  
+
+#define YEAR_X           (uint16_t)111
+#define YEAR_Y           (uint16_t)47
+#define YEAR_OFFSET      (uint16_t)37
+
+#define MONTH_X           (uint16_t)244
+#define MONTH_Y           (uint16_t)47  
+
+#define NUM_66_WIDTH      (uint16_t)12  /* Calendar Menu */
+
+/* Colors Palette */
+#define LCDCore_GREY  	LCD_COLOR(231, 230, 230)
+#define LCDCore_RED   	LCD_COLOR(128, 0, 0) 
+#define LCDCore_BLUE   	LCD_COLOR(48, 192, 255)
+
 
 /* Extern Images */
-extern const BITMAPSTRUCT gui_default;
-
 extern const BITMAPSTRUCT gui_bat_0;
 extern const BITMAPSTRUCT gui_bat_1;
 extern const BITMAPSTRUCT gui_slp_0;
@@ -114,59 +135,51 @@ extern const BITMAPSTRUCT slp_set_1;
 extern const BITMAPSTRUCT alrm_alrm_1;
 extern const BITMAPSTRUCT alrm_alrm_0;
 
-extern const BITMAPSTRUCT alrm_ellip_0;
-extern const BITMAPSTRUCT alrm_ellip_1;
-extern const BITMAPSTRUCT alrm_box_0;
-extern const BITMAPSTRUCT alrm_box_1; 
 
-extern const BITMAPSTRUCT bat_sens; 
-extern const BITMAPSTRUCT moist_sens; 
-extern const BITMAPSTRUCT wat_sets; 
+extern const BITMAPSTRUCT bat_sens;
+extern const BITMAPSTRUCT moist_sens;
+extern const BITMAPSTRUCT wat_sets;
 
-extern const BITMAPSTRUCT mid_clock_0; 
-extern const BITMAPSTRUCT mid_clock_1; 
-extern const BITMAPSTRUCT mid_hand_0; 
-extern const BITMAPSTRUCT mid_hand_1; 
-
-extern const BITMAPSTRUCT clndr_blnk; 
-extern const BITMAPSTRUCT clndr_clndr_0; 
-extern const BITMAPSTRUCT clndr_clndr_1; 
-extern const BITMAPSTRUCT date_0; 
-extern const BITMAPSTRUCT date_1; /* Extern Images */
+extern const BITMAPSTRUCT mid_clock_0;
+extern const BITMAPSTRUCT mid_clock_1;
+extern const BITMAPSTRUCT mid_hand_0;
+extern const BITMAPSTRUCT mid_hand_1;/* Extern Images */
 
 /* Global Arrays */
-const uint16_t  gui_menu_coor[8];   /* We can't join the regular  data type to pointer data type on the */
-const uint16_t  bat_menu_coor[4];   /* same array. Hence, we create two separate arrays */
-const uint16_t  slp_menu_coor[6];
-const uint16_t  alrm_menu_coor[20];
-const uint16_t  clndr_menu_coor[12];
 
+/* Coordinate Arrays */
+const uint16_t gui_menu_coor[8]; /* We can't join the regular  data type to pointer data type on the */
+const uint16_t bat_menu_coor[4]; /* same array. Hence, we create two separate arrays */
+const uint16_t slp_menu_coor[6];
+const uint16_t alrm_menu_coor[20];
+const uint16_t clndr_menu_coor[6]; /* Coordinate Arrays */
 
-const uint8_t* gui_menu_data[8];
-const uint8_t* bat_menu_data[4];
-const uint8_t* alrm_menu_data[20];
-const uint8_t* slp_menu_data[6];
-const uint8_t* clndr_menu_data[12]; 
-
-const uint8_t* mid_btn_data[4]; 
-const uint8_t* sens_data[4]; 
+// /* Data Arrays */
+const uint8_t *gui_menu_data[8];
+const uint8_t *bat_menu_data[4];
+const uint8_t *slp_menu_data[6];
+const uint8_t *alrm_menu_data[2];
+const uint8_t *mid_btn_data[2];
+const uint8_t *sens_data[3]; /* Data Arrays */
 
 /* Global Arrays */
 
 /* Struct Definition */
-typedef struct { 
-    uint16_t* c;
-    uint8_t** d; /* These should be double pointer since we are pointing to a pointer variable. 
-                    Basically when you are pointing to an array, you are pointing to the arrays
-                    data type. That is why we use regular pointer to point to an int array since 
-                    we treat the int array as an int variable. Similarly, we treat an int pointer 
-                    array as int pointer. Hence, a double pointer will point to an in pointer. */
-    // uint8_t* v; /* c = coordinates, d = image data array, v = stored value  */
-} Menu; 
-
+typedef struct {
+	uint16_t *c;
+	uint8_t **d; /* These should be double pointer since we are pointing to a pointer variable. 
+	 Basically when you are pointing to an array, you are pointing to the arrays
+	 data type. That is why we use regular pointer to point to an int array since 
+	 we treat the int array as an int variable. Similarly, we treat an int pointer 
+	 array as int pointer. Hence, a double pointer will point to an in pointer. */
+	uint8_t *v; /* c = coordinates, d = image data array, v = stored value  */
+} Menu;
 
 /* Global Function Prototypes */
 void LCDCore_Init(void);
 void LCDCore_UpdateScreen(void);
+//uint8_t LCDCore_getPixelState(uint8_t new_sel);
 
-#endif /*LCD_CORE_H */
+#ifdef __cplusplus
+}
+#endif
