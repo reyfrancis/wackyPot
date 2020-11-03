@@ -8,7 +8,7 @@
 #include "stm32_adafruit_lcd.h" /* BSP_LCD Function Definitions */
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Images Macros */
@@ -43,7 +43,7 @@
 #define mid_clock_0   MID_CLOCK_0
 #define mid_clock_1   MID_CLOCK_1
 #define mid_hand_0    MID_HAND_0
-#define mid_hand_1    MID_HAND_1 
+#define mid_hand_1    MID_HAND_1
 
 /* LCD    Dimensions in Pixels */
 #define WIDTH  320
@@ -61,55 +61,87 @@
 #define MID_BTN_BR         {118,         161}
 
 /* ONOF values */
-#define OFF 			   0
-#define ON 				   1
+#define OFF                0
+#define ON                 1
 
 /* CLICK values */
-#define CLICK 			   1
+#define CLICK              1
+
+/* Font Widths */
+#define FontPerpetuaTitlingMT17_WIDTH 19
+#define FontCalibri23_WIDTH 21 
 
 /* Battery Menu */
 #define BAT_STR_X          (uint16_t)226
 #define BAT_STR_Y          (uint16_t)144 /* Battery Menu */
-
-/* Alarm Menu */
-#define ALRM_ELLIPSE_DIM_X 28
-#define ALRM_ELLIPSE_DIM_Y 20
-#define ALRM_BOX_DIM_X     42
-#define ALRM_BOX_DIM_Y     46 /* Alarm Menu */
 
 /* Sleep Menu */
 #define SLP_STR_X          (uint16_t)145
 #define SLP_STR_Y          (uint16_t)213
 
 #define SLP_SET_STR_X      (uint16_t)135
-#define SLP_SET_STR_Y      (uint16_t)43 /* Sleep Menu */
+#define SLP_SET_STR_Y      (uint16_t)43 
 
-#define linearMinutesMAX	260
-#define linearMinutesMIN    80
+#define MINUTESMAX          260
+#define MINUTESMIN          80 /* Sleep Menu */
+
+/* Alarm Menu */
+#define ALRM_ELLIPSE_DIM_X 18
+#define ALRM_ELLIPSE_DIM_Y 12
+#define ALRM_ELLIPSE_CORRECTION_X 8
+#define ALRM_BOX_DIM_X     42
+#define ALRM_BOX_DIM_Y     30 
+#define ALRM_ELLIPSE_STR_CORRECTION_X 10
+#define ALRM_ELLIPSE_STR_CORRECTION_Y 6 
+#define ALRM_BOX_STR_CORRECTION_Y 4 /* Alarm Menu */
 
 /* Calendar Menu */
-#define CLNDR_MAIN_X       (uint16_t)244
-#define CLNDR_MAIN_Y       (uint16_t)214
-#define CLNDR_MAIN_WIDTH   (uint16_t)169
-#define CLNDR_MAIN_HEIGHT  (uint16_t)164
+#define CLNDR_MAIN_WIDTH 28
+#define CLNDR_MAIN_HEIGHT 24
+#define CLNDR_MAIN_X       (uint16_t)60
+#define CLNDR_MAIN_Y       (uint16_t)73
+#define CLNDR_MAIN_X_CORRECTION 7
+#define CLNDR_MAIN_Y_CORRECTION 4
+#define CLNDR_MAIN_X_CORRECTION_2DIG 1
 
-#define SUNDAY_X           (uint16_t)95
-#define SUNDAY_Y           (uint16_t)67
-#define SUNDAY_OFFSET      (uint16_t)24  
+#define CLNDR_MONTH_WIDTH 80
+#define CLNDR_MONTH_HEIGHT 40
+#define CLNDR_MONTH_X       (uint16_t)60
+#define CLNDR_MONTH_Y       (uint16_t)47
+#define CLNDR_MONTH_X_CORRECTION 4
+#define CLNDR_MONTH_Y_CORRECTION 6
 
-#define YEAR_X           (uint16_t)111
-#define YEAR_Y           (uint16_t)47
-#define YEAR_OFFSET      (uint16_t)37
+#define CLNDR_YEAR_WIDTH 46
+#define CLNDR_YEAR_HEIGHT 40
+#define CLNDR_YEAR_X       (uint16_t)162
+#define CLNDR_YEAR_Y       (uint16_t)47
+#define CLNDR_YEAR_GAP 2
+#define CLNDR_YEAR_X_CORRECTION 2
+#define CLNDR_YEAR_Y_CORRECTION 7
 
-#define MONTH_X           (uint16_t)244
-#define MONTH_Y           (uint16_t)47  
 
-#define NUM_66_WIDTH      (uint16_t)12  /* Calendar Menu */
+
+
+// #define CLNDR_MAIN_WIDTH   (uint16_t)169
+// #define CLNDR_MAIN_HEIGHT  (uint16_t)164
+
+// #define SUNDAY_X           (uint16_t)95
+// #define SUNDAY_Y           (uint16_t)67
+// #define SUNDAY_OFFSET      (uint16_t)24
+
+// #define YEAR_X           (uint16_t)111
+// #define YEAR_Y           (uint16_t)47
+// #define YEAR_OFFSET      (uint16_t)37
+
+// #define MONTH_X           (uint16_t)244
+// #define MONTH_Y           (uint16_t)47
+
+// #define NUM_66_WIDTH      (uint16_t)12  /* Calendar Menu */
 
 /* Colors Palette */
-#define LCDCore_GREY  	LCD_COLOR(231, 230, 230)
-#define LCDCore_RED   	LCD_COLOR(128, 0, 0) 
-#define LCDCore_BLUE   	LCD_COLOR(48, 192, 255)
+#define LCDCORE_GREY    LCD_COLOR(231, 230, 230)
+#define LCDCORE_RED     LCD_COLOR(128, 0, 0)
+#define LCDCORE_BLUE    LCD_COLOR(48, 192, 255)
 
 
 /* Extern Images */
@@ -148,31 +180,31 @@ extern const BITMAPSTRUCT mid_hand_1;/* Extern Images */
 /* Global Arrays */
 
 /* Coordinate Arrays */
-const uint16_t gui_menu_coor[8]; /* We can't join the regular  data type to pointer data type on the */
-const uint16_t bat_menu_coor[4]; /* same array. Hence, we create two separate arrays */
-const uint16_t slp_menu_coor[6];
-const uint16_t alrm_menu_coor[20];
-const uint16_t clndr_menu_coor[6]; /* Coordinate Arrays */
+uint16_t gui_menu_coor[8]; /* We can't join the regular  data type to pointer data type on the */
+uint16_t bat_menu_coor[4]; /* same array. Hence, we create two separate arrays */
+uint16_t slp_menu_coor[6];
+uint16_t alrm_menu_coor[20];
+uint16_t clndr_menu_coor[6]; /* Coordinate Arrays */
 
-// /* Data Arrays */
-const uint8_t *gui_menu_data[8];
-const uint8_t *bat_menu_data[4];
-const uint8_t *slp_menu_data[6];
-const uint8_t *alrm_menu_data[2];
-const uint8_t *mid_btn_data[2];
-const uint8_t *sens_data[3]; /* Data Arrays */
+/* Data Arrays */
+uint8_t *gui_menu_data[8];
+uint8_t *bat_menu_data[4];
+uint8_t *slp_menu_data[6];
+uint8_t *alrm_menu_data[2];
+uint8_t *mid_btn_data[2];
+uint8_t *sens_data[3]; /* Data Arrays */
 
 /* Global Arrays */
 
 /* Struct Definition */
 typedef struct {
-	uint16_t *c;
-	uint8_t **d; /* These should be double pointer since we are pointing to a pointer variable. 
-	 Basically when you are pointing to an array, you are pointing to the arrays
-	 data type. That is why we use regular pointer to point to an int array since 
-	 we treat the int array as an int variable. Similarly, we treat an int pointer 
-	 array as int pointer. Hence, a double pointer will point to an in pointer. */
-	uint8_t *v; /* c = coordinates, d = image data array, v = stored value  */
+    uint16_t *c;
+    uint8_t **d; /* These should be double pointer since we are pointing to a pointer variable.
+     Basically when you are pointing to an array, you are pointing to the arrays
+     data type. That is why we use regular pointer to point to an int array since
+     we treat the int array as an int variable. Similarly, we treat an int pointer
+     array as int pointer. Hence, a double pointer will point to an in pointer. */
+    uint8_t *v; /* c = coordinates, d = image data array, v = stored value  */
 } Menu;
 
 /* Global Function Prototypes */

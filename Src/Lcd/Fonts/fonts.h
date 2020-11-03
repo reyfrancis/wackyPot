@@ -73,7 +73,9 @@ typedef struct _tFont {
 } sFONT;
 
 extern sFONT FontPerpetuaTitlingMT17;
+extern sFONT FontCalibri15;
 extern sFONT FontCalibri23;
+extern sFONT FontCalibri27;
 extern sFONT Font24;
 extern sFONT Font20;
 extern sFONT Font16;
